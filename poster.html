@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>दुकान काउंटर पोस्टर — विजय ऑफसेट प्रेस | छठ पूजा 2026 Spin & Win</title>
+    <link href="https://fonts.googleapis.com/css2?family=Rozha+One&family=Yatra+One&family=Hind:wght@500;700;800&family=Poppins:wght@600;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: #0B172A;
+            color: #FFF;
+            font-family: 'Hind', 'Poppins', sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .no-print-bar {
+            background: #FF9100;
+            color: #000;
+            padding: 12px 24px;
+            border-radius: 8px;
+            font-weight: 700;
+            margin-bottom: 20px;
+            display: flex;
+            gap: 16px;
+            align-items: center;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+        }
+
+        .btn-print {
+            background: #000;
+            color: #FFF;
+            border: none;
+            padding: 8px 18px;
+            border-radius: 6px;
+            font-weight: 800;
+            cursor: pointer;
+        }
+
+        /* Printable Sheet (Standard A4 / 12x18 ratio) */
+        .poster-sheet {
+            width: 794px;
+            min-height: 1123px;
+            background: radial-gradient(circle at center top, #1E3A5F 0%, #0A1322 100%);
+            border: 8px solid #FFD700;
+            border-radius: 16px;
+            padding: 40px;
+            position: relative;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.8);
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .poster-sheet::before {
+            content: '';
+            position: absolute;
+            top: 10px;
+            bottom: 10px;
+            left: 10px;
+            right: 10px;
+            border: 2px dashed rgba(255, 215, 0, 0.4);
+            pointer-events: none;
+            border-radius: 10px;
+        }
+
+        .header-top {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 20px;
+            border-bottom: 2px solid rgba(255, 215, 0, 0.3);
+            padding-bottom: 20px;
+        }
+
+        .poster-logo {
+            width: 90px;
+            height: 90px;
+            border-radius: 50%;
+            border: 3px solid #FFD700;
+        }
+
+        .brand-text h1 {
+            font-family: 'Poppins', sans-serif;
+            font-size: 2.2rem;
+            font-weight: 900;
+            letter-spacing: 1.5px;
+            color: #FFD700;
+            text-shadow: 0 2px 8px rgba(0,0,0,0.5);
+        }
+
+        .brand-text .meta {
+            font-size: 1rem;
+            color: #E2E8F0;
+            font-weight: 600;
+        }
+
+        .festival-hero {
+            text-align: center;
+            margin: 25px 0 15px;
+        }
+
+        .festive-tag {
+            display: inline-block;
+            background: linear-gradient(90deg, #D81B60, #FF5722);
+            color: #FFF;
+            padding: 6px 24px;
+            border-radius: 30px;
+            font-size: 1.25rem;
+            font-weight: 800;
+            margin-bottom: 12px;
+        }
+
+        .main-headline {
+            font-family: 'Yatra One', sans-serif;
+            font-size: 3.2rem;
+            color: #FFE082;
+            letter-spacing: 2px;
+            text-shadow: 0 4px 15px rgba(255, 179, 0, 0.5);
+            line-height: 1.1;
+        }
+
+        .sub-headline {
+            font-size: 1.35rem;
+            color: #FFF;
+            font-weight: 700;
+            margin-top: 6px;
+        }
+
+        .min-order-badge {
+            display: inline-block;
+            margin-top: 10px;
+            background: rgba(0, 200, 83, 0.2);
+            border: 2px solid #00E676;
+            color: #B9F6CA;
+            font-size: 1.1rem;
+            font-weight: 800;
+            padding: 6px 20px;
+            border-radius: 20px;
+        }
+
+        /* 8 Offers Grid */
+        .offers-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 12px;
+            margin: 20px 0;
+        }
+
+        .offer-box {
+            background: rgba(255, 255, 255, 0.08);
+            border: 1px solid rgba(255, 215, 0, 0.3);
+            border-radius: 10px;
+            padding: 12px 8px;
+            text-align: center;
+        }
+
+        .offer-box .icon {
+            font-size: 1.4rem;
+            color: #FFD700;
+            margin-bottom: 4px;
+        }
+
+        .offer-box .title {
+            font-size: 1rem;
+            font-weight: 800;
+            color: #FFF;
+        }
+
+        /* Scan & Rules Section */
+        .scan-action-section {
+            background: rgba(13, 28, 51, 0.85);
+            border: 2px solid #FFD700;
+            border-radius: 14px;
+            padding: 20px;
+            display: flex;
+            align-items: center;
+            gap: 25px;
+            margin-bottom: 20px;
+        }
+
+        .qr-card {
+            background: #FFF;
+            padding: 12px;
+            border-radius: 12px;
+            text-align: center;
+            min-width: 170px;
+        }
+
+        .qr-card img {
+            width: 146px;
+            height: 146px;
+            display: block;
+        }
+
+        .qr-card span {
+            color: #000;
+            font-size: 0.78rem;
+            font-weight: 800;
+            display: block;
+            margin-top: 6px;
+        }
+
+        .rules-summary h3 {
+            color: #FFD700;
+            font-size: 1.2rem;
+            margin-bottom: 8px;
+        }
+
+        .rules-summary ul {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+            font-size: 0.95rem;
+            color: #E2E8F0;
+        }
+
+        .rules-summary ul li i {
+            color: #00E676;
+            margin-right: 6px;
+        }
+
+        /* Footer */
+        .poster-footer {
+            border-top: 2px solid rgba(255, 215, 0, 0.3);
+            padding-top: 15px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 0.95rem;
+            color: #FFE082;
+            font-weight: 700;
+        }
+
+        .poster-footer .phone {
+            font-size: 1.25rem;
+            color: #FFF;
+            background: #25D366;
+            padding: 6px 14px;
+            border-radius: 8px;
+            text-decoration: none;
+        }
+
+        @media print {
+            body {
+                background: #FFF;
+                padding: 0;
+            }
+            .no-print-bar {
+                display: none;
+            }
+            .poster-sheet {
+                box-shadow: none;
+                border: 6px solid #FFD700;
+                width: 100%;
+                min-height: 100vh;
+                border-radius: 0;
+                page-break-inside: avoid;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="no-print-bar">
+        <span>🖨️ <strong>काउंटर पोस्टर:</strong> लाइव वेबसाइट URL डालें:</span>
+        <input type="text" id="qrUrlInput" value="https://vijay-offset-press.netlify.app" style="padding: 6px 10px; border-radius: 4px; border: 1px solid #ccc; width: 280px; font-size: 0.9rem;" placeholder="https://your-site.netlify.app">
+        <button class="btn-print" id="updateQrBtn" style="background: #1A3A6B; margin-left: -8px;">
+            <i class="fa-solid fa-sync"></i> QR अपडेट करें
+        </button>
+        <button class="btn-print" onclick="window.print()">
+            <i class="fa-solid fa-print"></i> पोस्टर प्रिंट करें (Ctrl + P)
+        </button>
+        <a href="index.html" style="color: #000; font-weight: bold; text-decoration: underline; margin-left: 10px;">← वापस व्हील पर जाएँ</a>
+    </div>
+
+    <div class="poster-sheet">
+        <!-- Top Header -->
+        <div class="header-top">
+            <img src="assets/images/logo.jpg" alt="Logo" class="poster-logo">
+            <div class="brand-text">
+                <h1>VIJAY OFFSET PRESS</h1>
+                <div class="meta">ESTD. 1973 | जयनगर, मधुबनी (जय हिन्द सिनेमा चौक के पास)</div>
+            </div>
+        </div>
+
+        <!-- Festival Title -->
+        <div class="festival-hero">
+            <div class="festive-tag">🌞 छठ पूजा स्पेशल ऑफर 2026 🌞</div>
+            <h2 class="main-headline">🎡 SPIN & WIN 🎡</h2>
+            <p class="sub-headline">हर स्पिन में जीतें शानदार ऑफर और मनपसंद गिफ्ट!</p>
+            <div class="min-order-badge">
+                <i class="fa-solid fa-circle-check"></i> केवल ₹500 या उससे अधिक के प्रिंटिंग ऑर्डर पर मान्य
+            </div>
+        </div>
+
+        <!-- The 8 Wheel Options Grid -->
+        <div class="offers-grid">
+            <div class="offer-box">
+                <div class="icon"><i class="fa-solid fa-percent"></i></div>
+                <div class="title">5% OFF</div>
+            </div>
+            <div class="offer-box">
+                <div class="icon"><i class="fa-solid fa-tags"></i></div>
+                <div class="title">10% OFF</div>
+            </div>
+            <div class="offer-box">
+                <div class="icon"><i class="fa-solid fa-indian-rupee-sign"></i></div>
+                <div class="title">₹50 CASHBACK</div>
+            </div>
+            <div class="offer-box">
+                <div class="icon"><i class="fa-solid fa-sun"></i></div>
+                <div class="title">छठ पूजा शुभकामनाएँ</div>
+            </div>
+            <div class="offer-box">
+                <div class="icon"><i class="fa-solid fa-wallet"></i></div>
+                <div class="title">₹100 CASHBACK</div>
+            </div>
+            <div class="offer-box">
+                <div class="icon"><i class="fa-solid fa-ticket"></i></div>
+                <div class="title">NEXT VISIT 10% OFF</div>
+            </div>
+            <div class="offer-box">
+                <div class="icon"><i class="fa-solid fa-arrows-rotate"></i></div>
+                <div class="title">TRY AGAIN</div>
+            </div>
+            <div class="offer-box">
+                <div class="icon"><i class="fa-solid fa-gift"></i></div>
+                <div class="title">SURPRISE GIFT</div>
+            </div>
+        </div>
+
+        <!-- QR Scan & Claim Box -->
+        <div class="scan-action-section">
+            <div class="qr-card">
+                <!-- Dynamic QR pointing to customer spin URL -->
+                <img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://vijay-offset-press.netlify.app" alt="QR Code to Spin">
+                <span>📱 मोबाइल से स्कैन करें</span>
+            </div>
+            <div class="rules-summary">
+                <h3>📋 नियम एवं शर्तें (TERMS & CONDITIONS):</h3>
+                <ul>
+                    <li><i class="fa-solid fa-check"></i> केवल Vijay Offset Press के ग्राहकों के लिए मान्य।</li>
+                    <li><i class="fa-solid fa-check"></i> ₹500 या उससे अधिक के प्रिंटिंग ऑर्डर पर ही Spin की अनुमति।</li>
+                    <li><i class="fa-solid fa-check"></i> प्रत्येक ग्राहक को केवल 1 बार Spin करने का मौका मिलेगा।</li>
+                    <li><i class="fa-solid fa-check"></i> ऑफर छठ पूजा 2026 के अंतिम दिन तक ही मान्य।</li>
+                    <li><i class="fa-solid fa-check"></i> जीता गया कूपन काउंटर पर दिखाकर तुरंत डिस्काउंट पाएँ।</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <div class="poster-footer">
+            <div>
+                <div>"आपका विश्वास, हमारी पहचान!" — 50+ वर्षों की अटूट सेवा</div>
+                <div style="font-size: 0.85rem; color: #CBD5E1; font-weight: normal;">शादी कार्ड • फ्लैक्स प्रिंटिंग • उर्दू छपाई • मोहर • कैलेंडर</div>
+            </div>
+            <div class="phone">
+                <i class="fa-brands fa-whatsapp"></i> 9931043211
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const qrImage = document.querySelector('.qr-card img');
+        const qrUrlInput = document.getElementById('qrUrlInput');
+        const updateQrBtn = document.getElementById('updateQrBtn');
+
+        function updateQR() {
+            const url = qrUrlInput.value.trim() || window.location.origin;
+            qrImage.src = `https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=${encodeURIComponent(url)}`;
+        }
+
+        updateQrBtn.addEventListener('click', updateQR);
+        qrUrlInput.addEventListener('keypress', (e) => {
+            if (e.key === 'Enter') updateQR();
+        });
+    </script>
+</body>
+</html>
+

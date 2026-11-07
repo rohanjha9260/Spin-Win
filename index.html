@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+    <meta name="theme-color" content="#07101E">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <link rel="icon" type="image/jpeg" href="assets/images/logo.jpg">
+    <link rel="apple-touch-icon" href="assets/images/logo.jpg">
+    <link rel="manifest" href="manifest.json">
+    <title>🎡 Spin & Win — छठ पूजा स्पेशल ऑफर 2026 | Vijay Offset Press</title>
+    <meta name="description" content="Vijay Offset Press - छठ पूजा 2026 स्पेशल Spin & Win ऑफर। हर स्पिन में जीतें 5% - 10% OFF, ₹100 Cashback और आकर्षक उपहार!">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rozha+One&family=Yatra+One&family=Hind:wght@400;500;600;700&family=Poppins:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Canvas Confetti CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Top Decorative Festive Header Banner -->
+    <div class="festive-ribbon">
+        <div class="ribbon-track">
+            <span>✨ छठ पूजा स्पेशल ऑफर 2026 ✨</span>
+            <span>🎡 SPIN & WIN — हर स्पिन में शानदार ईनाम! 🎡</span>
+            <span>🖨️ VIJAY OFFSET PRESS — ESTD. 1973 🖨️</span>
+            <span>✨ छठ पूजा स्पेशल ऑफर 2026 ✨</span>
+            <span>🎡 SPIN & WIN — हर स्पिन में शानदार ईनाम! 🎡</span>
+        </div>
+    </div>
+
+    <!-- Main Container -->
+    <main class="page-wrapper">
+        <!-- Brand Header Section -->
+        <header class="hero-header">
+            <div class="brand-top-row">
+                <img src="assets/images/logo.jpg" alt="Vijay Offset Press Logo" class="brand-logo pulse-glow">
+                <div class="brand-info">
+                    <div class="estd-badge">
+                        <i class="fa-solid fa-award"></i> ESTD. 1973 | 50+ YEARS OF TRUST
+                    </div>
+                    <h1 class="brand-title">VIJAY OFFSET PRESS</h1>
+                    <p class="brand-location"><i class="fa-solid fa-location-dot"></i> Jaynagar, Madhubani (Near Jay Hind Cinema Chowk)</p>
+                </div>
+            </div>
+
+            <!-- Festival Campaign Hero Box -->
+            <div class="festival-banner-card">
+                <div class="sun-halo"></div>
+                <div class="festive-badge">
+                    <span class="sun-icon">🌞</span>
+                    <span>छठ पूजा स्पेशल ऑफर 2026</span>
+                    <span class="sun-icon">🌞</span>
+                </div>
+                <h2 class="campaign-title">
+                    <span class="wheel-icon">🎡</span> SPIN & WIN <span class="wheel-icon">🎡</span>
+                </h2>
+                <p class="campaign-tagline">हर स्पिन में जीतें शानदार ऑफर और मनपसंद गिफ्ट!</p>
+                
+                <div class="order-rule-pill">
+                    <i class="fa-solid fa-circle-check"></i> केवल <strong>₹500 या उससे अधिक</strong> के प्रिंटिंग ऑर्डर पर मान्य
+                </div>
+            </div>
+        </header>
+
+        <!-- Interactive Wheel & Game Area -->
+        <section class="spin-section">
+            <div class="wheel-container">
+                <!-- Outer decorative golden frame -->
+                <div class="wheel-glow-ring">
+                    <!-- Ticker Pointer Pin -->
+                    <div class="wheel-pointer" id="wheelPointer">
+                        <div class="pointer-arrow"></div>
+                    </div>
+
+                    <!-- High-Resolution Canvas Wheel (Crisp on Retina/AMOLED Phones) -->
+                    <canvas id="wheelCanvas" width="600" height="600"></canvas>
+
+                    <!-- Center Logo / Hub Button -->
+                    <div class="wheel-center-cap" id="wheelCenterBtn">
+                        <div class="center-content">
+                            <span class="spin-text">SPIN</span>
+                            <span class="sub-text">घूमाएँ</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Controls & Call to Action -->
+                <div class="wheel-actions">
+                    <button class="btn-spin-now" id="spinBtn">
+                        <i class="fa-solid fa-rotate"></i>
+                        <span>अभी पहिया घूमाएँ (SPIN NOW)</span>
+                    </button>
+                    <p class="spin-hint" id="spinHint">
+                        <i class="fa-solid fa-hand-point-up"></i> ऊपर दिए गए बटन को दबाएँ और अपना लकी ऑफर जीतें!
+                    </p>
+                </div>
+            </div>
+
+            <!-- Quick Prizes Grid (The 8 Options) -->
+            <div class="prizes-showcase">
+                <div class="prizes-title">
+                    <i class="fa-solid fa-gift"></i> व्हील के 8 शानदार ऑप्शन्स
+                </div>
+                <div class="prizes-grid">
+                    <div class="prize-card" data-index="0">
+                        <div class="prize-tag"><i class="fa-solid fa-percent"></i></div>
+                        <div class="prize-name">5% OFF</div>
+                        <div class="prize-desc">प्रिंटिंग बिल पर छूट</div>
+                    </div>
+                    <div class="prize-card" data-index="1">
+                        <div class="prize-tag"><i class="fa-solid fa-tags"></i></div>
+                        <div class="prize-name">10% OFF</div>
+                        <div class="prize-desc">धमाकेदार बचत</div>
+                    </div>
+                    <div class="prize-card" data-index="2">
+                        <div class="prize-tag"><i class="fa-solid fa-indian-rupee-sign"></i></div>
+                        <div class="prize-name">₹50 CASHBACK</div>
+                        <div class="prize-desc">तुरंत कैश डिस्काउंट</div>
+                    </div>
+                    <div class="prize-card special-card" data-index="3">
+                        <div class="prize-tag"><i class="fa-solid fa-sun"></i></div>
+                        <div class="prize-name">छठ पूजा शुभकामनाएँ</div>
+                        <div class="prize-desc">छठी मइया का आशीर्वाद</div>
+                    </div>
+                    <div class="prize-card bonus-card" data-index="4">
+                        <div class="prize-tag"><i class="fa-solid fa-wallet"></i></div>
+                        <div class="prize-name">₹100 CASHBACK</div>
+                        <div class="prize-desc">बड़ा कैश इनाम</div>
+                    </div>
+                    <div class="prize-card" data-index="5">
+                        <div class="prize-tag"><i class="fa-solid fa-ticket"></i></div>
+                        <div class="prize-name">NEXT VISIT 10% OFF</div>
+                        <div class="prize-desc">अगले ऑर्डर पर मान्य</div>
+                    </div>
+                    <div class="prize-card" data-index="6">
+                        <div class="prize-tag"><i class="fa-solid fa-arrows-rotate"></i></div>
+                        <div class="prize-name">TRY AGAIN</div>
+                        <div class="prize-desc">Better Luck Next Time</div>
+                    </div>
+                    <div class="prize-card surprise-card" data-index="7">
+                        <div class="prize-tag"><i class="fa-solid fa-box-open"></i></div>
+                        <div class="prize-name">SURPRISE GIFT</div>
+                        <div class="prize-desc">प्रेस काउंटर से विशेष गिफ्ट</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Terms and Conditions Section -->
+        <section class="terms-section">
+            <div class="terms-card">
+                <div class="terms-header">
+                    <div class="terms-icon-badge">
+                        <i class="fa-solid fa-clipboard-list"></i>
+                    </div>
+                    <div>
+                        <h3 class="terms-title">नियम एवं शर्तें (TERMS & CONDITIONS)</h3>
+                        <p class="terms-subtitle">कृपया स्पिन करने से पहले इन नियमों को ध्यानपूर्वक पढ़ें</p>
+                    </div>
+                </div>
+
+                <ul class="terms-list">
+                    <li>
+                        <span class="term-bullet"><i class="fa-solid fa-check"></i></span>
+                        <div>यह ऑफर केवल <strong>Vijay Offset Press</strong> के ग्राहकों के लिए है।</div>
+                    </li>
+                    <li>
+                        <span class="term-bullet"><i class="fa-solid fa-check"></i></span>
+                        <div>Spin & Win ऑफर केवल <strong>₹500 या उससे अधिक</strong> के प्रिंटिंग ऑर्डर पर मान्य होगा।</div>
+                    </li>
+                    <li>
+                        <span class="term-bullet"><i class="fa-solid fa-triangle-exclamation"></i></span>
+                        <div><strong>₹500 से कम</strong> के ऑर्डर पर Spin करने की अनुमति नहीं होगी।</div>
+                    </li>
+                    <li>
+                        <span class="term-bullet"><i class="fa-solid fa-user-check"></i></span>
+                        <div>प्रत्येक ग्राहक को केवल <strong>एक बार Spin</strong> करने का मौका मिलेगा।</div>
+                    </li>
+                    <li>
+                        <span class="term-bullet"><i class="fa-solid fa-ban"></i></span>
+                        <div>जीता हुआ ऑफर किसी दूसरे ग्राहक को <strong>ट्रांसफर नहीं</strong> किया जा सकता।</div>
+                    </li>
+                    <li>
+                        <span class="term-bullet"><i class="fa-solid fa-calendar-check"></i></span>
+                        <div>सभी ऑफर <strong>छठ पूजा के अंतिम दिन तक</strong> ही वैलिड रहेंगे।</div>
+                    </li>
+                    <li>
+                        <span class="term-bullet"><i class="fa-solid fa-arrow-right"></i></span>
+                        <div><strong>Next Visit वाला 10% OFF</strong> अगले ऑर्डर पर लागू होगा।</div>
+                    </li>
+                </ul>
+
+                <div class="validity-banner">
+                    <i class="fa-solid fa-clock"></i> OFFER VALID TILL LAST DAY OF CHHATH PUJA 2026
+                </div>
+            </div>
+        </section>
+
+        <!-- About Vijay Offset Press & Trust Showcase -->
+        <section class="about-press-section">
+            <div class="press-grid">
+                <div class="press-content">
+                    <span class="sub-heading">50+ वर्षों की अटूट विश्वसनीयता</span>
+                    <h3 class="press-title">VIJAY OFFSET PRESS</h3>
+                    <p class="press-tagline">"आपका विश्वास, हमारी पहचान!"</p>
+                    <p class="press-desc">
+                        1973 से जयनगर एवं सम्पूर्ण मधुबनी क्षेत्र में प्रिंटिंग की दुनिया का सबसे विश्वसनीय नाम। शादी कार्ड, बैनर, फ्लैक्स प्रिंटिंग, उर्दू छपाई, मल्टीकलर ऑफसेट प्रिंटिंग और मोहर आदि के लिए आज ही पधारें।
+                    </p>
+                    <div class="contact-chips">
+                        <a href="tel:9931043211" class="chip-item">
+                            <i class="fa-solid fa-phone"></i> +91 9931043211
+                        </a>
+                        <a href="https://vijay-offset-press.netlify.app/" target="_blank" rel="noopener" class="chip-item highlight">
+                            <i class="fa-solid fa-globe"></i> Official Website Visit
+                        </a>
+                        <div class="chip-item">
+                            <i class="fa-solid fa-map-pin"></i> मेन रोड, जयनगर (जय हिन्द सिनेमा चौक के पास)
+                        </div>
+                    </div>
+                </div>
+
+                <div class="press-images-gallery">
+                    <div class="gallery-card main-shop">
+                        <img src="assets/images/shop-front.jpg" alt="Vijay Offset Press Shop Front Jaynagar">
+                        <span class="photo-caption"><i class="fa-solid fa-store"></i> जयनगर शॉप प्रतिष्ठान</span>
+                    </div>
+                    <div class="gallery-card machine-view">
+                        <img src="assets/images/workspace-machine.jpg" alt="Modern Flex Banner Printing Machine">
+                        <span class="photo-caption"><i class="fa-solid fa-gears"></i> अत्याधुनिक हाई-स्पीड प्रिंटिंग मशीन</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Final Wishes & Footer -->
+        <footer class="campaign-footer">
+            <div class="footer-blessing">
+                <span class="sun-deco">🌞</span>
+                <h3>छठ पूजा की हार्दिक शुभकामनाएँ</h3>
+                <span class="sun-deco">🌞</span>
+            </div>
+            <p class="footer-brand">VIJAY OFFSET PRESS | ESTD. 1973 | JAYNAGAR, MADHUBANI</p>
+            <p class="footer-copy" id="secretAdminTrigger" style="cursor: default; user-select: none;">© 2026 Vijay Offset Press. All rights reserved. | Built with ❤️ for Jaynagar, Bihar</p>
+            
+            <!-- Developer Credit -->
+            <p class="footer-dev">
+                Crafted with ❤️ by 
+                <a href="https://www.linkedin.com/in/rohanjha9260" target="_blank" rel="noopener noreferrer" class="dev-link" title="Connect on LinkedIn">
+                    <i class="fa-brands fa-linkedin"></i> Rohan Jha (rohanjha9260)
+                </a>
+            </p>
+        </footer>
+    </main>
+
+    <!-- Win Result Modal Dialog -->
+    <div class="modal-backdrop" id="winModal">
+        <div class="modal-dialog">
+            <button class="modal-close-btn" id="modalCloseBtn">&times;</button>
+            
+            <div class="modal-header-icon" id="modalIcon">
+                <i class="fa-solid fa-trophy"></i>
+            </div>
+            
+            <div class="festive-win-tag">बधाई हो! CONGRATULATIONS!</div>
+            
+            <h2 class="modal-prize-title" id="modalPrizeTitle">10% OFF</h2>
+            <p class="modal-prize-desc" id="modalPrizeDesc">आपको मिला है विजय ऑफसेट प्रेस की तरफ से विशेष छठ पूजा डिस्काउंट!</p>
+
+            <!-- Coupon Box -->
+            <div class="coupon-display-box">
+                <div class="coupon-label">आपका लकी कूपन कोड (COUPON CODE)</div>
+                <div class="coupon-code-value">
+                    <span id="couponCode">VOP-CHHATH-7892</span>
+                    <button id="copyCouponBtn" class="btn-copy" title="Copy Coupon Code">
+                        <i class="fa-regular fa-copy"></i>
+                    </button>
+                </div>
+                <div class="coupon-validity"><i class="fa-regular fa-calendar-check"></i> केवल छठ पूजा 2026 तक मान्य (₹500+ ऑर्डर)</div>
+            </div>
+
+            <!-- Customer Claim Details Form -->
+            <div class="claim-details-box">
+                <label for="custName"><i class="fa-regular fa-user"></i> आपका शुभ नाम:</label>
+                <input type="text" id="custName" placeholder="उदा. राहुल कुमार" maxlength="50">
+
+                <label for="billAmount"><i class="fa-solid fa-receipt"></i> प्रिंटिंग आर्डर राशि (₹500 या अधिक):</label>
+                <input type="number" id="billAmount" placeholder="₹ बिल राशि दर्ज करें" min="500">
+            </div>
+
+            <!-- Claim on WhatsApp CTA -->
+            <div class="modal-actions">
+                <button class="btn-whatsapp-claim" id="claimWhatsappBtn">
+                    <i class="fa-brands fa-whatsapp"></i>
+                    <span>दुकानदार को WhatsApp पर भेजें & Claim करें</span>
+                </button>
+                <button class="btn-secondary-close" id="modalCloseActionBtn">
+                    <span>बंद करें (Close)</span>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
+
