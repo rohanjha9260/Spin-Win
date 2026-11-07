@@ -3,80 +3,79 @@
    Canvas Wheel Physics, Audio Synthesis & Claim Logic
    ========================================================= */
 
-// 8 Segments with Profit-Protection Probability Weights (Total = 100%)
-// Lower cost / safe offers appear more frequently, High discounts appear rarely to protect shop margins.
+// 8 Segments with Profit-Protection Weights (Professional Solid Palette)
 const SECTORS = [
     {
         label: "5% OFF",
         subtext: "प्रिंटिंग छूट",
-        color: "#D81B60",
+        color: "#B91C1C",
         textColor: "#FFFFFF",
         type: "discount",
-        weight: 20, // 20% Chance: Safe standard discount (₹25 on ₹500)
-        desc: "बधाई हो! आपको विजय ऑफसेट प्रेस की तरफ से प्रिंटिंग बिल पर 5% की सीधी छूट मिली है।"
+        weight: 20,
+        desc: "आपको मिला है प्रिंटिंग बिल पर 5% की सीधी छूट।"
     },
     {
         label: "10% OFF",
-        subtext: "धमाकेदार बचत",
-        color: "#1A3A6B",
+        subtext: "बिल डिस्काउंट",
+        color: "#1E3A6B",
         textColor: "#FFFFFF",
         type: "discount",
-        weight: 8,  // 8% Chance: Controlled big discount
-        desc: "शानदार जीत! आपके ₹500+ के प्रिंटिंग ऑर्डर पर पूरे 10% का बंपर डिस्काउंट लागू होगा।"
+        weight: 8,
+        desc: "आपके ₹500+ के प्रिंटिंग ऑर्डर पर 10% डिस्काउंट लागू होगा।"
     },
     {
         label: "₹50 CASHBACK",
-        subtext: "तुरंत बचत",
-        color: "#00897B",
+        subtext: "सीधा कैशबैक",
+        color: "#15803D",
         textColor: "#FFFFFF",
         type: "cashback",
-        weight: 5,  // 5% Chance: Direct cash reduction, kept rare
-        desc: "अद्भुत! आपको ₹50 का सीधा कैशबैक / डिस्काउंट आपके प्रिंटिंग बिल पर मिल गया है।"
+        weight: 5,
+        desc: "आपको मिला है ₹50 का सीधा बिल कैशबैक डिस्काउंट।"
     },
     {
         label: "छठ पूजा",
-        subtext: "हार्दिक शुभकामनाएँ",
-        color: "#E65100",
-        textColor: "#FFF9C4",
+        subtext: "शुभकामनाएँ",
+        color: "#D97706",
+        textColor: "#FFFFFF",
         type: "blessing",
-        weight: 25, // 25% Chance: ₹0 Cost, huge cultural goodwill & satisfaction
-        desc: "🌞 छठी मइया की असीम कृपा आप और आपके परिवार पर सदा बनी रहे! विजय ऑफसेट प्रेस परिवार की ओर से छठ पूजा की हार्दिक शुभकामनाएँ।"
+        weight: 25,
+        desc: "छठ पूजा की हार्दिक शुभकामनाएँ! विजय ऑफसेट प्रेस परिवार की ओर से बधाई।"
     },
     {
         label: "₹100 CASHBACK",
-        subtext: "महा बचत",
-        color: "#0288D1",
+        subtext: "बड़ा कैशबैक",
+        color: "#0369A1",
         textColor: "#FFFFFF",
         type: "cashback",
-        weight: 2,  // 2% Chance: Rare Lucky Jackpot! (Saves your profit)
-        desc: "बड़ा ईनाम! आपको मिला है फ्लैट ₹100 CASHBACK आपके ₹500+ के प्रिंटिंग आर्डर पर।"
+        weight: 2,
+        desc: "बधाई हो! आपको मिला है ₹100 का बंपर कैशबैक डिस्काउंट।"
     },
     {
         label: "NEXT VISIT",
         subtext: "10% OFF",
-        color: "#6A1B9A",
+        color: "#6D28D9",
         textColor: "#FFFFFF",
         type: "next_visit",
-        weight: 22, // 22% Chance: ₹0 Cost today! Brings repeat business to shop
-        desc: "बहुत खूब! अगली बार जब भी आप विजय ऑफसेट प्रेस पधारेंगे, आपको फ्लैट 10% OFF प्राप्त होगा।"
+        weight: 22,
+        desc: "अगली विज़िट पर आपके प्रिंटिंग ऑर्डर पर 10% डिस्काउंट लागू होगा।"
     },
     {
         label: "TRY AGAIN",
-        subtext: "Better Luck Next Time",
-        color: "#37474F",
-        textColor: "#ECEFF1",
+        subtext: "धन्यवाद",
+        color: "#475569",
+        textColor: "#FFFFFF",
         type: "try_again",
-        weight: 15, // 15% Chance: ₹0 Cost
-        desc: "कोई बात नहीं! इस बार लकी व्हील मिस हो गया। विजय ऑफसेट प्रेस आपके उज्ज्वल भविष्य की कामना करता है।"
+        weight: 15,
+        desc: "इस बार लकी व्हील मिस हो गया। विजय ऑफसेट प्रेस में पधारने के लिए धन्यवाद।"
     },
     {
         label: "SURPRISE GIFT",
-        subtext: "स्पेशल उपहार",
-        color: "#C2185B",
+        subtext: "विशेष उपहार",
+        color: "#A16207",
         textColor: "#FFFFFF",
         type: "gift",
-        weight: 3,  // 3% Chance: Token gift (pen/keychain/calendar)
-        desc: "वाह! आपने जीता है विजय ऑफसेट प्रेस का विशेष सरप्राइज गिफ्ट! काउंटर पर अपना कूपन दिखाकर गिफ्ट प्राप्त करें।"
+        weight: 3,
+        desc: "आपने जीता है विशेष सरप्राइज गिफ्ट! काउंटर पर कूपन दिखाकर प्राप्त करें।"
     }
 ];
 
@@ -142,11 +141,11 @@ function playTickSound() {
     }
 }
 
-// Draw Wheel onto Canvas (High-Resolution Retina / Mobile Crisp)
+// Draw Wheel onto Canvas (Clean, Crisp Corporate Style)
 function drawWheel() {
     const size = canvas.width;
     const center = size / 2;
-    const radius = center - 10;
+    const radius = center - 8;
 
     ctx.clearRect(0, 0, size, size);
 
@@ -164,17 +163,17 @@ function drawWheel() {
         ctx.fill();
 
         // Slice borders
-        ctx.lineWidth = 2.5;
-        ctx.strokeStyle = "rgba(255, 215, 0, 0.4)";
+        ctx.lineWidth = 1.5;
+        ctx.strokeStyle = "rgba(255, 255, 255, 0.25)";
         ctx.stroke();
 
-        // Outer rim decoration dot
+        // Outer dot
         const dotAngle = sectorAngle + arc / 2;
-        const dotX = center + (radius - 15) * Math.cos(dotAngle);
-        const dotY = center + (radius - 15) * Math.sin(dotAngle);
+        const dotX = center + (radius - 14) * Math.cos(dotAngle);
+        const dotY = center + (radius - 14) * Math.sin(dotAngle);
         ctx.beginPath();
-        ctx.arc(dotX, dotY, 4.5, 0, Math.PI * 2);
-        ctx.fillStyle = "#FFE082";
+        ctx.arc(dotX, dotY, 3.5, 0, Math.PI * 2);
+        ctx.fillStyle = "#FFFFFF";
         ctx.fill();
 
         // Text rendering along radius
@@ -184,26 +183,23 @@ function drawWheel() {
         ctx.textAlign = "right";
         ctx.fillStyle = item.textColor;
 
-        // Primary Label (crisp and bold for phone readability)
-        ctx.font = "bold 21px 'Poppins', 'Hind', sans-serif";
-        ctx.shadowColor = "rgba(0,0,0,0.8)";
-        ctx.shadowBlur = 5;
-        ctx.fillText(item.label, radius - 30, 2);
+        // Primary Label (crisp, solid typography without blurry shadows)
+        ctx.font = "bold 20px 'Poppins', 'Hind', sans-serif";
+        ctx.fillText(item.label, radius - 28, 2);
 
         // Subtext
-        ctx.font = "600 13px 'Hind', sans-serif";
-        ctx.shadowBlur = 3;
-        ctx.fillStyle = "rgba(255, 255, 255, 0.9)";
-        ctx.fillText(item.subtext, radius - 30, 24);
+        ctx.font = "600 12px 'Hind', sans-serif";
+        ctx.fillStyle = "rgba(255, 255, 255, 0.85)";
+        ctx.fillText(item.subtext, radius - 28, 22);
 
         ctx.restore();
     }
 
-    // Outer metallic ring
+    // Outer solid gold ring
     ctx.beginPath();
     ctx.arc(center, center, radius, 0, Math.PI * 2);
-    ctx.lineWidth = 7;
-    ctx.strokeStyle = "#FFD700";
+    ctx.lineWidth = 6;
+    ctx.strokeStyle = "#D4922A";
     ctx.stroke();
 }
 
@@ -226,41 +222,14 @@ function generateCouponCode() {
     return `VOP-CHHATH-${randomChars}`;
 }
 
-// Trigger Confetti Celebration
+// Subtle Confetti Celebration (Single tasteful burst)
 function triggerConfetti() {
     if (typeof confetti === "function") {
-        const count = 200;
-        const defaults = {
-            origin: { y: 0.6 }
-        };
-
-        function fire(particleRatio, opts) {
-            confetti(Object.assign({}, defaults, opts, {
-                particleCount: Math.floor(count * particleRatio)
-            }));
-        }
-
-        fire(0.25, {
-            spread: 26,
-            startVelocity: 55,
-        });
-        fire(0.2, {
+        confetti({
+            particleCount: 50,
             spread: 60,
-        });
-        fire(0.35, {
-            spread: 100,
-            decay: 0.91,
-            scalar: 0.8
-        });
-        fire(0.1, {
-            spread: 120,
-            startVelocity: 25,
-            decay: 0.92,
-            colors: ['#FFB300', '#FF5722', '#00A8FF', '#D81B60']
-        });
-        fire(0.1, {
-            spread: 120,
-            startVelocity: 45,
+            origin: { y: 0.6 },
+            colors: ['#D4922A', '#10B981', '#FFFFFF']
         });
     }
 }
