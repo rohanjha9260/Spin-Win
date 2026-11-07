@@ -3,12 +3,12 @@
    Canvas Wheel Physics, Audio Synthesis & Claim Logic
    ========================================================= */
 
-// 8 Segments with Profit-Protection Weights (Professional Solid Palette)
+// 8 Segments with Exact Brand Palette (Matching vijay-offset-press.netlify.app)
 const SECTORS = [
     {
         label: "5% OFF",
         subtext: "प्रिंटिंग छूट",
-        color: "#B91C1C",
+        color: "#C0392B",
         textColor: "#FFFFFF",
         type: "discount",
         weight: 20,
@@ -17,7 +17,7 @@ const SECTORS = [
     {
         label: "10% OFF",
         subtext: "बिल डिस्काउंट",
-        color: "#1E3A6B",
+        color: "#1A3A6B", // Navy Mid
         textColor: "#FFFFFF",
         type: "discount",
         weight: 8,
@@ -26,7 +26,7 @@ const SECTORS = [
     {
         label: "₹50 CASHBACK",
         subtext: "सीधा कैशबैक",
-        color: "#15803D",
+        color: "#27AE60", // Emerald Dark
         textColor: "#FFFFFF",
         type: "cashback",
         weight: 5,
@@ -35,7 +35,7 @@ const SECTORS = [
     {
         label: "छठ पूजा",
         subtext: "शुभकामनाएँ",
-        color: "#D97706",
+        color: "#D4922A", // Amber Dark
         textColor: "#FFFFFF",
         type: "blessing",
         weight: 25,
@@ -44,7 +44,7 @@ const SECTORS = [
     {
         label: "₹100 CASHBACK",
         subtext: "बड़ा कैशबैक",
-        color: "#0369A1",
+        color: "#132B50", // Navy Light
         textColor: "#FFFFFF",
         type: "cashback",
         weight: 2,
@@ -53,7 +53,7 @@ const SECTORS = [
     {
         label: "NEXT VISIT",
         subtext: "10% OFF",
-        color: "#6D28D9",
+        color: "#1E824C", // Deep Emerald
         textColor: "#FFFFFF",
         type: "next_visit",
         weight: 22,
@@ -62,7 +62,7 @@ const SECTORS = [
     {
         label: "TRY AGAIN",
         subtext: "धन्यवाद",
-        color: "#475569",
+        color: "#4A4A5A", // Brand Text Muted
         textColor: "#FFFFFF",
         type: "try_again",
         weight: 15,
@@ -71,8 +71,8 @@ const SECTORS = [
     {
         label: "SURPRISE GIFT",
         subtext: "विशेष उपहार",
-        color: "#A16207",
-        textColor: "#FFFFFF",
+        color: "#F0A83C", // Amber Primary
+        textColor: "#0B1D3A",
         type: "gift",
         weight: 3,
         desc: "आपने जीता है विशेष सरप्राइज गिफ्ट! काउंटर पर कूपन दिखाकर प्राप्त करें।"
@@ -195,11 +195,11 @@ function drawWheel() {
         ctx.restore();
     }
 
-    // Outer solid gold ring
+    // Outer solid amber ring (Matching original brand amber)
     ctx.beginPath();
     ctx.arc(center, center, radius, 0, Math.PI * 2);
     ctx.lineWidth = 6;
-    ctx.strokeStyle = "#D4922A";
+    ctx.strokeStyle = "#F0A83C";
     ctx.stroke();
 }
 
@@ -222,14 +222,14 @@ function generateCouponCode() {
     return `VOP-CHHATH-${randomChars}`;
 }
 
-// Subtle Confetti Celebration (Single tasteful burst)
+// Subtle Confetti Celebration (Single tasteful burst in brand colors)
 function triggerConfetti() {
     if (typeof confetti === "function") {
         confetti({
             particleCount: 50,
             spread: 60,
             origin: { y: 0.6 },
-            colors: ['#D4922A', '#10B981', '#FFFFFF']
+            colors: ['#F0A83C', '#2ECC71', '#F7C97E', '#FFFFFF']
         });
     }
 }

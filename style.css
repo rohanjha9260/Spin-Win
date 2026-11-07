@@ -1,36 +1,32 @@
 /* =========================================================
    VIJAY OFFSET PRESS — SPIN & WIN 2026
-   Clean, Professional & Modern Corporate Stylesheet
-   (Zero gradients, zero glitter, concise & polished)
+   Official Brand Design System (vijay-offset-press.netlify.app)
    ========================================================= */
 
 :root {
-    --bg-main: #0B1B33;
-    --bg-card: #13294B;
-    --bg-card-subtle: #17325C;
-    --bg-input: #0E203B;
+    --navy: #0B1D3A;
+    --navy-light: #132B50;
+    --navy-mid: #1A3A6B;
+    --amber: #F0A83C;
+    --amber-light: #F7C97E;
+    --amber-dark: #D4922A;
+    --emerald: #2ECC71;
+    --emerald-dark: #27AE60;
+    --cream: #FBF9F5;
+    --warm-gray: #F5F3EF;
+    --text-dark: #1A1A2E;
+    --text-body: #4A4A5A;
+    --text-muted: #8A8A9A;
+    --glass-bg: rgba(11, 29, 58, 0.85);
+    --glass-border: rgba(255, 255, 255, 0.08);
+    --radius: 16px;
+    --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.06);
+    --shadow-md: 0 8px 30px rgba(0, 0, 0, 0.08);
+    --shadow-lg: 0 20px 60px rgba(0, 0, 0, 0.12);
+    --shadow-glow: 0 0 40px rgba(240, 168, 60, 0.15);
     
-    --accent-gold: #D4922A;
-    --accent-gold-hover: #BF8121;
-    --accent-crimson: #B91C1C;
-    --accent-emerald: #10B981;
-    --whatsapp-green: #25D366;
-    --whatsapp-hover: #20BA5A;
-
-    --border-subtle: rgba(255, 255, 255, 0.12);
-    --border-active: #D4922A;
-
-    --text-white: #FFFFFF;
-    --text-light: #E2E8F0;
-    --text-muted: #94A3B8;
-    
-    --font-main: 'Poppins', 'Hind', sans-serif;
-
-    --radius-sm: 6px;
-    --radius-md: 10px;
-    --radius-lg: 14px;
-    
-    --shadow-card: 0 4px 16px rgba(0, 0, 0, 0.25);
+    --font-heading: 'Inter', sans-serif;
+    --font-body: 'Inter', 'Hind', sans-serif;
 }
 
 * {
@@ -39,10 +35,14 @@
     box-sizing: border-box;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 body {
-    background-color: var(--bg-main);
-    color: var(--text-light);
-    font-family: var(--font-main);
+    background-color: var(--navy);
+    color: #FFFFFF;
+    font-family: var(--font-body);
     font-size: 15px;
     line-height: 1.5;
     min-height: 100vh;
@@ -51,9 +51,10 @@ body {
 
 /* ================= TOP ANNOUNCEMENT STRIP ================= */
 .top-announcement-strip {
-    background-color: var(--accent-crimson);
-    color: var(--text-white);
-    padding: 8px 16px;
+    background-color: var(--navy-light);
+    border-bottom: 1px solid var(--glass-border);
+    color: var(--amber-light);
+    padding: 9px 16px;
     text-align: center;
     font-size: 0.85rem;
     font-weight: 600;
@@ -64,7 +65,7 @@ body {
 .page-wrapper {
     max-width: 980px;
     margin: 0 auto;
-    padding: 24px 16px 50px;
+    padding: 26px 16px 50px;
 }
 
 /* ================= BRAND HEADER ================= */
@@ -84,8 +85,9 @@ body {
 .brand-logo {
     width: 80px;
     height: 80px;
-    border-radius: 50%;
-    border: 2px solid var(--accent-gold);
+    border-radius: 16px;
+    border: 3px solid var(--amber);
+    box-shadow: 0 4px 15px rgba(240, 168, 60, 0.45);
     background-color: #000;
     object-fit: cover;
 }
@@ -101,9 +103,9 @@ body {
     align-items: center;
     gap: 6px;
     align-self: flex-start;
-    background-color: var(--bg-card);
-    border: 1px solid var(--accent-gold);
-    color: var(--accent-gold);
+    background-color: rgba(240, 168, 60, 0.12);
+    border: 1px solid var(--amber);
+    color: var(--amber-light);
     font-size: 0.75rem;
     font-weight: 700;
     letter-spacing: 0.8px;
@@ -113,10 +115,11 @@ body {
 }
 
 .brand-title {
-    font-size: 1.9rem;
+    font-family: var(--font-heading);
+    font-size: 2rem;
     font-weight: 800;
     letter-spacing: 1px;
-    color: var(--text-white);
+    color: #FFFFFF;
     line-height: 1.2;
     margin-bottom: 6px;
 }
@@ -127,23 +130,24 @@ body {
 }
 
 .brand-location i {
-    color: var(--accent-gold);
-    margin-right: 4px;
+    color: var(--amber);
+    margin-right: 5px;
 }
 
 /* Festival Campaign Box */
 .festival-banner-card {
-    background-color: var(--bg-card);
-    border: 1px solid var(--border-subtle);
-    border-radius: var(--radius-lg);
+    background-color: var(--navy-light);
+    border: 1px solid var(--glass-border);
+    border-radius: var(--radius);
     padding: 22px 18px;
-    box-shadow: var(--shadow-card);
+    box-shadow: var(--shadow-md);
 }
 
 .festive-badge {
     display: inline-block;
-    background-color: var(--accent-crimson);
-    color: var(--text-white);
+    background-color: var(--navy-mid);
+    border: 1px solid var(--amber);
+    color: var(--amber);
     padding: 5px 14px;
     border-radius: 20px;
     font-size: 0.85rem;
@@ -152,16 +156,17 @@ body {
 }
 
 .campaign-title {
+    font-family: var(--font-heading);
     font-size: 2.2rem;
     font-weight: 800;
     letter-spacing: 1.5px;
-    color: var(--accent-gold);
+    color: var(--amber);
     margin-bottom: 6px;
 }
 
 .campaign-tagline {
     font-size: 1.05rem;
-    color: var(--text-light);
+    color: var(--cream);
     margin-bottom: 12px;
 }
 
@@ -169,9 +174,9 @@ body {
     display: inline-flex;
     align-items: center;
     gap: 8px;
-    background-color: var(--bg-card-subtle);
-    border: 1px solid var(--accent-emerald);
-    color: var(--accent-emerald);
+    background-color: rgba(46, 204, 113, 0.12);
+    border: 1px solid var(--emerald);
+    color: var(--emerald);
     padding: 6px 14px;
     border-radius: 20px;
     font-size: 0.85rem;
@@ -200,9 +205,9 @@ body {
     height: min(420px, 86vw);
     border-radius: 50%;
     padding: 6px;
-    background-color: var(--bg-card);
-    border: 5px solid var(--accent-gold);
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+    background-color: var(--navy-light);
+    border: 5px solid var(--amber);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -216,13 +221,13 @@ body {
     touch-action: none;
 }
 
-/* Center Spin Hub */
+/* Center Hub */
 .wheel-center-cap {
     position: absolute;
     width: min(78px, 20vw);
     height: min(78px, 20vw);
     border-radius: 50%;
-    background-color: var(--accent-gold);
+    background-color: var(--amber);
     border: 3px solid #FFF;
     display: flex;
     align-items: center;
@@ -235,7 +240,7 @@ body {
 }
 
 .wheel-center-cap:hover {
-    background-color: var(--accent-gold-hover);
+    background-color: var(--amber-dark);
     transform: scale(1.05);
 }
 
@@ -244,7 +249,7 @@ body {
 }
 
 .center-content {
-    color: #0B1B33;
+    color: var(--navy);
     font-weight: 900;
 }
 
@@ -269,7 +274,7 @@ body {
     height: 0;
     border-left: 16px solid transparent;
     border-right: 16px solid transparent;
-    border-top: 30px solid var(--accent-gold);
+    border-top: 30px solid var(--amber);
     position: relative;
 }
 
@@ -282,7 +287,7 @@ body {
     height: 0;
     border-left: 11px solid transparent;
     border-right: 11px solid transparent;
-    border-top: 20px solid var(--accent-crimson);
+    border-top: 20px solid var(--navy-mid);
 }
 
 .pointer-tick {
@@ -302,15 +307,15 @@ body {
 }
 
 .btn-spin-now {
-    background-color: var(--accent-gold);
-    color: #0B1B33;
+    background-color: var(--amber);
+    color: var(--navy);
     border: none;
     padding: 14px 34px;
     border-radius: 30px;
     font-size: 1.05rem;
     font-weight: 700;
     cursor: pointer;
-    box-shadow: 0 4px 12px rgba(212, 146, 42, 0.3);
+    box-shadow: 0 4px 15px rgba(240, 168, 60, 0.35);
     transition: background-color 0.2s, transform 0.15s;
     display: inline-flex;
     align-items: center;
@@ -319,7 +324,7 @@ body {
 }
 
 .btn-spin-now:hover {
-    background-color: var(--accent-gold-hover);
+    background-color: var(--amber-dark);
     transform: translateY(-2px);
 }
 
@@ -338,17 +343,18 @@ body {
 /* ================= 8 PRIZES SHOWCASE ================= */
 .prizes-showcase {
     width: 100%;
-    background-color: var(--bg-card);
-    border: 1px solid var(--border-subtle);
-    border-radius: var(--radius-lg);
+    background-color: var(--navy-light);
+    border: 1px solid var(--glass-border);
+    border-radius: var(--radius);
     padding: 20px 18px;
+    box-shadow: var(--shadow-sm);
 }
 
 .prizes-title {
     text-align: center;
     font-size: 1.15rem;
     font-weight: 700;
-    color: var(--text-white);
+    color: #FFFFFF;
     margin-bottom: 16px;
 }
 
@@ -359,34 +365,34 @@ body {
 }
 
 .prize-card {
-    background-color: var(--bg-card-subtle);
-    border: 1px solid var(--border-subtle);
-    border-radius: var(--radius-md);
+    background-color: var(--navy-mid);
+    border: 1px solid var(--glass-border);
+    border-radius: 12px;
     padding: 12px 10px;
     text-align: center;
     transition: border-color 0.2s, transform 0.2s;
 }
 
 .prize-card:hover {
-    border-color: var(--accent-gold);
+    border-color: var(--amber);
     transform: translateY(-2px);
 }
 
 .prize-card.active-win {
-    border-color: var(--accent-emerald);
-    background-color: rgba(16, 185, 129, 0.15);
+    border-color: var(--emerald);
+    background-color: rgba(46, 204, 113, 0.15);
 }
 
 .prize-tag {
     font-size: 1.25rem;
-    color: var(--accent-gold);
+    color: var(--amber);
     margin-bottom: 4px;
 }
 
 .prize-name {
     font-size: 0.95rem;
     font-weight: 700;
-    color: var(--text-white);
+    color: #FFFFFF;
     margin-bottom: 2px;
 }
 
@@ -401,30 +407,30 @@ body {
 }
 
 .terms-card {
-    background-color: var(--bg-card);
-    border: 1px solid var(--border-subtle);
-    border-radius: var(--radius-lg);
+    background-color: var(--navy-light);
+    border: 1px solid var(--glass-border);
+    border-radius: var(--radius);
     padding: 22px 20px;
-    box-shadow: var(--shadow-card);
+    box-shadow: var(--shadow-md);
 }
 
 .terms-header {
     margin-bottom: 16px;
-    border-bottom: 1px solid var(--border-subtle);
+    border-bottom: 1px solid var(--glass-border);
     padding-bottom: 12px;
 }
 
 .terms-title {
     font-size: 1.2rem;
     font-weight: 700;
-    color: var(--text-white);
+    color: #FFFFFF;
     display: flex;
     align-items: center;
     gap: 10px;
 }
 
 .terms-title i {
-    color: var(--accent-gold);
+    color: var(--amber);
 }
 
 .terms-list {
@@ -439,22 +445,22 @@ body {
     align-items: flex-start;
     gap: 10px;
     font-size: 0.92rem;
-    color: var(--text-light);
+    color: var(--cream);
     line-height: 1.45;
 }
 
 .term-bullet {
-    color: var(--accent-gold);
+    color: var(--amber);
     font-weight: 800;
 }
 
 .validity-banner {
     margin-top: 18px;
-    background-color: var(--bg-card-subtle);
-    border: 1px solid var(--accent-gold);
-    color: var(--accent-gold);
+    background-color: rgba(240, 168, 60, 0.12);
+    border: 1px solid var(--amber);
+    color: var(--amber-light);
     padding: 10px 14px;
-    border-radius: var(--radius-md);
+    border-radius: 10px;
     text-align: center;
     font-weight: 700;
     font-size: 0.88rem;
@@ -463,11 +469,12 @@ body {
 
 /* ================= ABOUT PRESS SECTION ================= */
 .about-press-section {
-    background-color: var(--bg-card);
-    border: 1px solid var(--border-subtle);
-    border-radius: var(--radius-lg);
+    background-color: var(--navy-light);
+    border: 1px solid var(--glass-border);
+    border-radius: var(--radius);
     padding: 24px 20px;
     margin-bottom: 36px;
+    box-shadow: var(--shadow-sm);
 }
 
 .press-grid {
@@ -478,7 +485,7 @@ body {
 }
 
 .sub-heading {
-    color: var(--accent-gold);
+    color: var(--amber);
     font-size: 0.8rem;
     font-weight: 700;
     letter-spacing: 1px;
@@ -487,13 +494,13 @@ body {
 .press-title {
     font-size: 1.7rem;
     font-weight: 800;
-    color: var(--text-white);
+    color: #FFFFFF;
     margin: 2px 0 4px;
 }
 
 .press-tagline {
     font-size: 1rem;
-    color: var(--accent-gold);
+    color: var(--amber-light);
     font-style: italic;
     margin-bottom: 10px;
 }
@@ -515,11 +522,11 @@ body {
     display: inline-flex;
     align-items: center;
     gap: 8px;
-    background-color: var(--bg-card-subtle);
-    border: 1px solid var(--border-subtle);
+    background-color: var(--navy-mid);
+    border: 1px solid var(--glass-border);
     padding: 8px 14px;
-    border-radius: var(--radius-sm);
-    color: var(--text-white);
+    border-radius: 8px;
+    color: #FFFFFF;
     text-decoration: none;
     font-size: 0.85rem;
     font-weight: 500;
@@ -527,7 +534,7 @@ body {
 }
 
 .chip-item:hover {
-    border-color: var(--accent-gold);
+    border-color: var(--amber);
 }
 
 .press-images-gallery {
@@ -538,9 +545,9 @@ body {
 
 .gallery-card {
     position: relative;
-    border-radius: var(--radius-md);
+    border-radius: 12px;
     overflow: hidden;
-    border: 1px solid var(--border-subtle);
+    border: 1px solid var(--glass-border);
     background-color: #000;
 }
 
@@ -556,7 +563,7 @@ body {
     bottom: 0;
     left: 0;
     right: 0;
-    background-color: rgba(11, 27, 51, 0.88);
+    background-color: rgba(11, 29, 58, 0.88);
     padding: 6px;
     font-size: 0.72rem;
     font-weight: 600;
@@ -567,13 +574,13 @@ body {
 /* ================= FOOTER ================= */
 .campaign-footer {
     text-align: center;
-    border-top: 1px solid var(--border-subtle);
+    border-top: 1px solid var(--glass-border);
     padding-top: 24px;
 }
 
 .footer-brand {
     font-size: 0.9rem;
-    color: var(--text-white);
+    color: #FFFFFF;
     font-weight: 700;
     letter-spacing: 0.5px;
     margin-bottom: 4px;
@@ -618,7 +625,7 @@ body {
     left: 0;
     right: 0;
     bottom: 0;
-    background-color: rgba(6, 15, 29, 0.85);
+    background-color: rgba(11, 29, 58, 0.85);
     display: none;
     align-items: center;
     justify-content: center;
@@ -631,10 +638,10 @@ body {
 }
 
 .modal-dialog {
-    background-color: var(--bg-card);
-    border: 1.5px solid var(--accent-gold);
+    background-color: var(--navy-light);
+    border: 1.5px solid var(--amber);
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
-    border-radius: var(--radius-md);
+    border-radius: var(--radius);
     width: 100%;
     max-width: 370px;
     padding: 18px 16px 14px;
@@ -663,8 +670,8 @@ body {
     width: 44px;
     height: 44px;
     border-radius: 50%;
-    background-color: var(--accent-gold);
-    color: #0B1B33;
+    background-color: var(--amber);
+    color: var(--navy);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -675,29 +682,29 @@ body {
 .festive-win-tag {
     font-size: 0.78rem;
     font-weight: 700;
-    color: var(--accent-gold);
+    color: var(--amber-light);
     letter-spacing: 0.5px;
 }
 
 .modal-prize-title {
     font-size: 1.45rem;
     font-weight: 800;
-    color: var(--text-white);
+    color: #FFFFFF;
     margin: 2px 0 4px;
 }
 
 .modal-prize-desc {
     font-size: 0.78rem;
-    color: var(--text-light);
+    color: var(--cream);
     margin-bottom: 10px;
     line-height: 1.35;
 }
 
 /* Coupon Box */
 .coupon-display-box {
-    background-color: var(--bg-input);
-    border: 1px dashed var(--accent-gold);
-    border-radius: var(--radius-sm);
+    background-color: var(--navy);
+    border: 1px dashed var(--amber);
+    border-radius: 8px;
     padding: 8px 12px;
     margin-bottom: 10px;
 }
@@ -720,13 +727,13 @@ body {
     font-family: 'Courier New', Courier, monospace;
     font-size: 1.2rem;
     font-weight: 800;
-    color: var(--accent-gold);
+    color: var(--amber);
     letter-spacing: 1.5px;
 }
 
 .btn-copy {
-    background-color: var(--bg-card-subtle);
-    border: 1px solid var(--border-subtle);
+    background-color: var(--navy-mid);
+    border: 1px solid var(--glass-border);
     color: #FFF;
     width: 26px;
     height: 26px;
@@ -739,13 +746,13 @@ body {
 }
 
 .btn-copy:hover {
-    background-color: var(--accent-gold);
-    color: #0B1B33;
+    background-color: var(--amber);
+    color: var(--navy);
 }
 
 .coupon-validity {
     font-size: 0.65rem;
-    color: var(--accent-emerald);
+    color: var(--emerald);
     margin-top: 3px;
 }
 
@@ -761,13 +768,13 @@ body {
 .claim-details-box label {
     font-size: 0.72rem;
     font-weight: 600;
-    color: var(--text-light);
+    color: var(--cream);
 }
 
 .claim-details-box input {
-    background-color: var(--bg-input);
-    border: 1px solid var(--border-subtle);
-    border-radius: var(--radius-sm);
+    background-color: var(--navy);
+    border: 1px solid var(--glass-border);
+    border-radius: 6px;
     padding: 7px 10px;
     color: #FFF;
     font-size: 14px;
@@ -775,7 +782,7 @@ body {
 }
 
 .claim-details-box input:focus {
-    border-color: var(--accent-gold);
+    border-color: var(--amber);
 }
 
 .modal-actions {
@@ -785,7 +792,7 @@ body {
 }
 
 .btn-whatsapp-claim {
-    background-color: var(--whatsapp-green);
+    background-color: var(--emerald-dark);
     color: #FFF;
     border: none;
     padding: 10px 14px;
@@ -801,12 +808,12 @@ body {
 }
 
 .btn-whatsapp-claim:hover {
-    background-color: var(--whatsapp-hover);
+    background-color: var(--emerald);
 }
 
 .btn-secondary-close {
     background: transparent;
-    border: 1px solid var(--border-subtle);
+    border: 1px solid var(--glass-border);
     color: var(--text-muted);
     padding: 5px 10px;
     border-radius: 14px;
