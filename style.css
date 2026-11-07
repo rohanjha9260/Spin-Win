@@ -133,19 +133,24 @@ body {
 
 .brand-info {
     text-align: left;
+    display: flex;
+    flex-direction: column;
 }
 
 .estd-badge {
-    display: inline-block;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    align-self: flex-start;
     background: rgba(255, 179, 0, 0.15);
     border: 1px solid var(--gold-primary);
     color: var(--gold-light);
-    font-size: 0.75rem;
+    font-size: 0.78rem;
     font-weight: 700;
     letter-spacing: 1px;
-    padding: 3px 12px;
+    padding: 5px 14px;
     border-radius: 20px;
-    margin-bottom: 4px;
+    margin-bottom: 12px;
 }
 
 .brand-title {
@@ -156,7 +161,8 @@ body {
     background: linear-gradient(135deg, #FFF 20%, var(--gold-light) 60%, var(--gold-primary) 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-    line-height: 1.15;
+    line-height: 1.25;
+    margin-bottom: 8px;
 }
 
 .brand-location {
@@ -166,7 +172,7 @@ body {
 
 .brand-location i {
     color: var(--sun-orange);
-    margin-right: 4px;
+    margin-right: 5px;
 }
 
 /* Festival Campaign Box */
@@ -1092,21 +1098,31 @@ body {
     .brand-top-row {
         flex-direction: column;
         text-align: center;
-        gap: 10px;
-        margin-bottom: 14px;
+        gap: 16px;
+        margin-bottom: 22px;
     }
 
     .brand-logo {
-        width: 76px;
-        height: 76px;
+        width: 78px;
+        height: 78px;
     }
 
     .brand-info {
         text-align: center;
+        align-items: center;
+    }
+
+    .estd-badge {
+        align-self: center;
+        margin-bottom: 14px;
+        padding: 5px 16px;
+        font-size: 0.76rem;
     }
 
     .brand-title {
-        font-size: 1.8rem;
+        font-size: 1.85rem;
+        margin-bottom: 10px;
+        line-height: 1.25;
     }
 
     .brand-location {
@@ -1266,13 +1282,25 @@ body {
         padding: 6px 0;
     }
 
+    .brand-top-row {
+        gap: 14px;
+        margin-bottom: 18px;
+    }
+
     .brand-logo {
         width: 68px;
         height: 68px;
     }
 
+    .estd-badge {
+        margin-bottom: 12px;
+        padding: 4px 13px;
+    }
+
     .brand-title {
-        font-size: 1.55rem;
+        font-size: 1.6rem;
+        margin-bottom: 8px;
+        line-height: 1.25;
     }
 
     .campaign-title {
